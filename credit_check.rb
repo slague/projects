@@ -11,12 +11,10 @@ second_to_last = card_number.length-2
 # puts "#{card_number[last]}" # you can't do interpolation inside interpolation
 # puts "#{card_number[second_to_last]}" # This is the position I want to start with!
 
-
 # puts "#{length}"
 # puts "#{length -1}"
 # puts "#{second_to_last}"
 # puts "#{card_number[0]}"
-
 
 # keep subtracting 2 to do this to the beginning of the string
 # if any of these variables are two digits add the two digits
@@ -45,11 +43,6 @@ doubled_8 = 2 * card_number[0].to_i
 # puts "#{doubled_next}"
 
 
-#I want to add all of the digits
-sum = card_number[last] + doubled + card_number[13].to_i + doubled_next + card_number[11].to_i +
-doubled_3 + card_number[9].to_i + doubled_4 + card_number[7].to_i + doubled_5 + card_number[5].to_i +
-  doubled_6 + card_number[3].to_i + doubled_7 + card_number[1].to_i + doubled_8
-
   puts "#{card_number[last]}"
   puts "#{doubled}" 
   puts "#{card_number[13].to_i}" 
@@ -57,24 +50,55 @@ doubled_3 + card_number[9].to_i + doubled_4 + card_number[7].to_i + doubled_5 + 
   puts "#{card_number[11].to_i}" 
   puts "#{doubled_3}"
   puts "#{card_number[9].to_i}"
-  puts "#{doubled_4}" 
+  
+  # puts "#{doubled_4}" #double digit 
+  digits = doubled_4.to_s 
+  digit_first = digits[0].to_i
+  digit_second = digits[1].to_i
+  doubled_this = digit_first + digit_second
+  doubled_4 = doubled_this 
+  puts "#{doubled_4}"
+  
   puts "#{card_number[7].to_i}"
+  
+  # puts "#{doubled_5}" #double digit
+  again = doubled_5.to_s
+  again_first = again[0].to_i
+  again_second = again[1].to_i
+  again_this = again_first + again_second
+  doubled_5 = again_this
   puts "#{doubled_5}"
+
   puts "#{card_number[5].to_i}"
+  
+  # puts "#{doubled_6}"#double digit
+  again_2 = doubled_6.to_s
+  again_2_first = again_2[0].to_i
+  again_2_second = again_2[1].to_i
+  again_2_this = again_2_first + again_2_second 
+  doubled_6 = again_2_this 
   puts "#{doubled_6}"
+
+
   puts "#{card_number[3].to_i}"
   puts "#{doubled_7}"
   puts "#{card_number[1].to_i}"
   puts "#{doubled_8}"
 
+#I want to add all of the digits
+
+sum = card_number[last].to_i + doubled + card_number[13].to_i + doubled_next + card_number[11].to_i +
+ doubled_3 + card_number[9].to_i + doubled_4 + card_number[7].to_i + doubled_5 + card_number[5].to_i +
+   doubled_6 + card_number[3].to_i + doubled_7 + card_number[1].to_i + doubled_8
 
 puts "#{sum}"
 
+if sum % 10 ==0 
+  puts "The account number is valid"
+
+else  
+  puts "The account number is invalid"
+end 
 
 
 valid = false
-
-
-
-puts "The account number is valid"
-puts "The account number is invalid"
