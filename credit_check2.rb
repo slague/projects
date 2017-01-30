@@ -20,7 +20,6 @@ while valid == false
     end
     i = i + 2
   end
-require "pry"; binding.pry 
   sum = 0 
   account.each do |digit|
     sum += digit.to_i
